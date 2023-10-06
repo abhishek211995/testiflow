@@ -1,0 +1,12 @@
+{
+    "name": "abhishek/testiflow",
+    "description": "This is a testimonials plugin for wordpress",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Abhishek Potdar",
+            "email": "abhirpotdar@gmail.com"
+        }
+    ],
+    "require": {}
+}
