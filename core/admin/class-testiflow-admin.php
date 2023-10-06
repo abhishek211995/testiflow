@@ -17,22 +17,22 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  class Testiflow_Admin{
     function __construct(){
         
-        $this->include_admin_files();
+        $this->tf_include_admin_files();
 
         new Testiflow_Meta();
         
 		add_action('admin_enqueue_scripts', array($this, 'register_admin_scripts'), 1);
-        add_action('init', array($this, 'register_testimonial_post_type'), 0);
-        add_action( 'admin_menu', array($this, 'me_add_admin_menu'));
+        add_action('init', array($this, 'tf_register_testimonial_post_type'), 0);
+        add_action( 'admin_menu', array($this, 'tf_add_admin_menu'));
 
-        add_filter('use_block_editor_for_post_type', array($this, 'disable_gutenberg_editor_for_custom_post_type'), 10, 2);
+        add_filter('use_block_editor_for_post_type', array($this, 'tf_disable_gutenberg_editor_for_custom_post_type'), 10, 2);
 	}
 
-    public function include_admin_files(){
+    public function tf_include_admin_files(){
         require_once TESTIFLOW_PLUGIN_DIR . 'core/admin/classes/Meta.php';
     }
 
-    public function register_admin_scripts(){
+    public function tf_register_admin_scripts(){
 
         wp_register_script('testiflow-admin', TESTIFLOW_PLUGIN_URL.'core/admin/js/testiflow-main.js', array('jquery', 'testiflow-raty'), TESTIFLOW_FILE_VERSION);
         wp_localize_script( 'testiflow-admin', 'tfadminVars',
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     }
 
-    public function register_testimonial_post_type(){
+    public function tf_register_testimonial_post_type(){
         $labels = array(
             'name'                  => _x( 'Testimonials', 'Post Type General Name', 'testiflow' ),
             'singular_name'         => _x( 'Testimonial', 'Post Type Singular Name', 'testiflow' ),
@@ -115,14 +115,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         }       
     }
 
-    public function disable_gutenberg_editor_for_custom_post_type($use_block_editor, $post_type) {
+    public function tf_disable_gutenberg_editor_for_custom_post_type($use_block_editor, $post_type) {
         if ($post_type === 'tf_testimonials') {
             return false;
         }
         return $use_block_editor;
     }
 
-    public function me_add_admin_menu() {
+    public function tf_add_admin_menu() {
         add_submenu_page(
             'edit.php?post_type=tf_testimonials',
             __( 'Generate Shortcode', 'testiflow' ),
