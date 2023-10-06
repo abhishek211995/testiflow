@@ -137,8 +137,4 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         include_once(TESTIFLOW_PLUGIN_DIR . 'core/admin/views/GenerateShortcodes.php');
     }
 
-    public function set_git(){
-        return 'hii';
-    }
-
  }
