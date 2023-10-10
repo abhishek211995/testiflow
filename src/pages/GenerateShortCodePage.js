@@ -5,6 +5,7 @@ import TextInput from "../components/TextInput";
 import TfLayout from "../layouts/Layout";
 import TfTabs from "../components/TfTabs";
 import TfShortcodeGeneralSettings from "../components/ShortcodeGeneralSettings";
+import TfShortcodeImageSettings from "../components/ImageSettings";
 import TfButton from "../components/Button";
 import TfThemeSettings from "../components/ThemeSettings";
 
@@ -32,7 +33,7 @@ export default function GenerateShortCodePage() {
       id: "image-settings",
       icon: "dashicons-admin-media",
       label: "Image Settings",
-      content: <PageIntro title="Test Title" />,
+      content: <TfShortcodeImageSettings />,
     },
     {
       id: "slider-controls",

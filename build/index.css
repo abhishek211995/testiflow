@@ -552,6 +552,9 @@ video {
 .hidden {
   display: none;
 }
+.w-\[60\%\] {
+  width: 60%;
+}
 .w-\[90\%\] {
   width: 90%;
 }
@@ -569,6 +572,9 @@ video {
 }
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 .justify-items-end {
   justify-items: end;
@@ -591,6 +597,9 @@ video {
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
+}
+.rounded {
+  border-radius: 0.25rem;
 }
 .rounded-lg {
   border-radius: 0.5rem;

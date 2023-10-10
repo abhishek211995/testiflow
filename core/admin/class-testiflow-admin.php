@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
         new Testiflow_Meta();
         
-		add_action('admin_enqueue_scripts', array($this, 'register_admin_scripts'), 1);
+		add_action('admin_enqueue_scripts', array($this, 'tf_register_admin_scripts'), 1);
         add_action('init', array($this, 'tf_register_testimonial_post_type'), 0);
         add_action( 'admin_menu', array($this, 'tf_add_admin_menu'));
 
