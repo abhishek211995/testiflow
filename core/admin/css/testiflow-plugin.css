@@ -161,3 +161,7 @@ table.tf_table tr td {
     box-shadow: none !important;
     outline: none !important;
 }
+
+.tf_rating {
+    display: flex;
+}

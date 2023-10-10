@@ -66,6 +66,13 @@ class Testiflow_Meta{
                 'class' => '',
                 'type' => 'email'
             ),
+            array(
+                'name' => 'tf_testimonial_company',
+                'label' => 'Company',
+                'id' => 'tf_testimonial_company',
+                'class' => '',
+                'type' => 'text'
+            ),
         );
 
         return $meta_array;
@@ -96,8 +103,9 @@ class Testiflow_Meta{
             case 'rating':
                 echo '<div class="tf_form_field_wrap">
                 <label for="">Rating</label>
-                <div class="tf_rating" data-score-name="'.$data['name'].'" data-score="'.$value.'"></div></div>';
-                break;
+                <div class="tf_rating" data-score-name="'.esc_attr($data['name']).'" data-score="'.esc_attr($value).'"></div></div>';
+            break;
+            
             default: 
                 echo 'No Input Type found';
         }
