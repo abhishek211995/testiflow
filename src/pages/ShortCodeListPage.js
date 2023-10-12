@@ -1,45 +1,47 @@
 import React, { useState } from "react";
-import TfButton from "../components/Button";
+import TfButton from "../components/Link";
 import TfLayout from "../layouts/Layout";
 import ShortCodeTable from "../components/ShortcodesTable";
+import PageIntro from "../components/Layouts/PageIntro";
+import TfLinkButton from "../components/Link";
 
 export default function ShortCodeListPage() {
   const [loading, isLoading] = useState(false);
+  const [inputChange, setInputChange] = useState(false);
+
+  const handleinputchange = () => {
+    setInputChange(!inputChange);
+    console.log(inputChange);
+  };
 
   return (
     <TfLayout>
       <div className="tf_container">
-        <div className="tf_page_intro_wrap">
-          <h3>Shortcodes</h3>
-          <p>Add and Edit your shortcodes here with easy to use interface.</p>
-          <TfButton
-            onClick={() => console.log("clicked")}
-            type="button"
-            id="countBtn"
-            isLoading={loading}
-          >
-            <span class="dashicons dashicons-plus-alt2"></span> Generate New
-            Shortcode
-          </TfButton>
+        <PageIntro
+          title="All ShortCodes"
+          description="Generate your shortcode here which you can use in your posts & pages"
+        />
+        <TfLinkButton
+          link="/create-shortcode"
+          className="mb-5"
+        >
+          <span class="dashicons dashicons-plus-alt2"></span> Generate New
+          Shortcode
+        </TfLinkButton>
 
-          <div>
-            <label
-              for="first-name"
-              class="block text-sm font-semibold leading-6 text-gray-900"
-            >
-              First name
-            </label>
-            <div class="mt-2.5">
-              <input
-                type="text"
-                name="first-name"
-                id="first-name"
-                autoComplete="given-name"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-        </div>
+        <label className="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            value={inputChange ? "yes" : "no"}
+            className="sr-only peer"
+            onChange={handleinputchange}
+          />
+          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+          <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+            Toggle me
+          </span>
+        </label>
+
         <ShortCodeTable />
       </div>
     </TfLayout>
