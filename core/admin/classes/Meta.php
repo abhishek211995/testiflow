@@ -66,6 +66,28 @@ class Testiflow_Meta{
                 'class' => '',
                 'type' => 'email'
             ),
+            array(
+                'name' => 'tf_testimonial_company',
+                'label' => 'Company',
+                'id' => 'tf_testimonial_company',
+                'class' => '',
+                'type' => 'text'
+            ),
+            array(
+                'name' => 'tf_testimonial_select_field',
+                'label' => 'Demo Select Field',
+                'id' => 'tf_testimonial_select_field',
+                'class' => '',
+                'type' => 'select',
+                'options' => (
+                    array(
+                        'option_1' => 'Option 1',
+                        'option_2' => 'Option 2',
+                        'option_3' => 'Option 3',
+                        'option_4' => 'Option 4',
+                    )
+                )
+            )
         );
 
         return $meta_array;
@@ -95,9 +117,21 @@ class Testiflow_Meta{
             break;
             case 'rating':
                 echo '<div class="tf_form_field_wrap">
-                <label for="">Rating</label>
-                <div class="tf_rating" data-score-name="'.$data['name'].'" data-score="'.$value.'"></div></div>';
-                break;
+                <label for="">'.esc_html('Rating').'</label>
+                <div class="tf_rating" data-score-name="'.esc_attr($data['name']).'" data-score="'.esc_attr($value).'"></div></div>';
+            break;
+
+            case 'select': 
+                echo '<div class="tf_form_field_wrap">
+                    <label for="">'.esc_html($data['label']).'</label>
+                    <select name="'.esc_attr($data['name']).' id="'.esc_attr($data['id']).'"">';
+                    foreach($data['options'] as $key => $value){
+                        echo '<option value="'.$key.'">'.$value.'</option>';
+                    }
+                echo '</select>
+                </div>';
+            break;
+            
             default: 
                 echo 'No Input Type found';
         }
