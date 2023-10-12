@@ -73,6 +73,7 @@ class Testiflow_Meta{
                 'class' => '',
                 'type' => 'text'
             ),
+<<<<<<< HEAD
             array(
                 'name' => 'tf_testimonial_select_field',
                 'label' => 'Demo Select Field',
@@ -88,6 +89,8 @@ class Testiflow_Meta{
                     )
                 )
             )
+=======
+>>>>>>> 1e0266d12ba74cf56c9b79530e443f10a39517ab
         );
 
         return $meta_array;
