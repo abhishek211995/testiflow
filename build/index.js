@@ -4501,6 +4501,30 @@ function PageIntro(props) {
 
 /***/ }),
 
+/***/ "./src/components/Link.js":
+/*!********************************!*\
+  !*** ./src/components/Link.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ TfLinkButton; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+
+
+function TfLinkButton(props) {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    to: props.link,
+    className: `tf_button ${props.className ? props.className : ""}`
+  }, props.children);
+}
+
+/***/ }),
+
 /***/ "./src/components/SelectInput.js":
 /*!***************************************!*\
   !*** ./src/components/SelectInput.js ***!
@@ -5146,17 +5170,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ ShortCodeListPage; }
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button.js");
-/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layouts/Layout */ "./src/layouts/Layout.js");
-/* harmony import */ var _components_ShortcodesTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ShortcodesTable */ "./src/components/ShortcodesTable.js");
 
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Link */ "./src/components/Link.js");
+/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../layouts/Layout */ "./src/layouts/Layout.js");
+/* harmony import */ var _components_ShortcodesTable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ShortcodesTable */ "./src/components/ShortcodesTable.js");
+/* harmony import */ var _components_Layouts_PageIntro__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Layouts/PageIntro */ "./src/components/Layouts/PageIntro.js");
 
 
 
 
 function ShortCodeListPage() {
+  const [loading, isLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const [inputChange, setInputChange] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const handleinputchange = () => {
+    setInputChange(!inputChange);
+    console.log(inputChange);
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "tf_container"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Layouts_PageIntro__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "All ShortCodes",
+    description: "Generate your shortcode here which you can use in your posts & pages"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    link: "/create-shortcode",
+    className: "mb-5"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    class: "dashicons dashicons-plus-alt2"
+  }), " Generate New Shortcode"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    className: "relative inline-flex items-center cursor-pointer"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "checkbox",
+    value: inputChange ? "yes" : "no",
+    className: "sr-only peer",
+    onChange: handleinputchange
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+  }, "Toggle me")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ShortcodesTable__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
+
   const [loading, isLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tf_container"
@@ -5181,6 +5237,7 @@ function ShortCodeListPage() {
     autoComplete: "given-name",
     className: "block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ShortcodesTable__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+
 }
 
 /***/ }),
