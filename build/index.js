@@ -4160,6 +4160,119 @@ function TfButton(props) {
 
 /***/ }),
 
+/***/ "./src/components/DisplaySettings.js":
+/*!*******************************************!*\
+  !*** ./src/components/DisplaySettings.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ TfDisplaySettings; }
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _SelectInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectInput */ "./src/components/SelectInput.js");
+/* harmony import */ var _ToggleSwitch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ToggleSwitch */ "./src/components/ToggleSwitch.js");
+/* harmony import */ var _Layouts_PageIntro__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Layouts/PageIntro */ "./src/components/Layouts/PageIntro.js");
+
+
+
+
+
+function TfDisplaySettings(props) {
+  const htmlTags = [{
+    label: "h1",
+    value: "h1"
+  }, {
+    label: "h2",
+    value: "h2"
+  }, {
+    label: "h3",
+    value: "h3"
+  }, {
+    label: "h4",
+    value: "h4"
+  }, {
+    label: "h5",
+    value: "h5"
+  }, {
+    label: "h6",
+    value: "h6"
+  }];
+  const [selectedHtmlTags, setSelectedHtmlTags] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("H1");
+  const handlesetSelectedHtmlTags = e => {
+    setSelectedHtmlTags(e.target.value);
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Layouts_PageIntro__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: "Testimonial Content"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ToggleSwitch__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Section Title",
+    description: "Show/Hide the testimonial section title.",
+    type: "checkbox",
+    role: "switch",
+    id: "flexSwitchCheckDefault"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ToggleSwitch__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Testimonial Title",
+    description: "Show/Hide the testimonial section title.",
+    type: "checkbox",
+    role: "switch",
+    id: "flexSwitchCheckDefault"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_SelectInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    label: "HTML Tag",
+    description: "Select testimonial title HTML tag.",
+    options: htmlTags,
+    value: selectedHtmlTags,
+    onChange: handlesetSelectedHtmlTags
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ToggleSwitch__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Read More",
+    description: "Show/Hide testimonial read more button.",
+    type: "checkbox",
+    role: "switch",
+    id: "flexSwitchCheckDefault"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5 mt-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Layouts_PageIntro__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: "Reviewer Information"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ToggleSwitch__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Full Name",
+    description: "Show/Hide reviewer full name.",
+    type: "checkbox",
+    role: "switch",
+    id: "flexSwitchCheckDefault"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_SelectInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    label: "HTML Tag",
+    description: "Select reviewer name HTML tag.",
+    options: htmlTags,
+    value: selectedHtmlTags,
+    onChange: handlesetSelectedHtmlTags
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ToggleSwitch__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Identity or Position",
+    description: "Show/Hide identity or position.",
+    type: "checkbox",
+    role: "switch",
+    id: "flexSwitchCheckDefault"
+  }))));
+}
+
+/***/ }),
+
 /***/ "./src/components/ImageRadioBoxInput.js":
 /*!**********************************************!*\
   !*** ./src/components/ImageRadioBoxInput.js ***!
@@ -4224,6 +4337,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ImageRadioBoxInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ImageRadioBoxInput */ "./src/components/ImageRadioBoxInput.js");
+/* harmony import */ var _SelectInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectInput */ "./src/components/SelectInput.js");
+/* harmony import */ var _ToggleSwitch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ToggleSwitch */ "./src/components/ToggleSwitch.js");
+
+
 
 
 
@@ -4237,9 +4354,34 @@ function TfShortcodeImageSettings(props) {
       return e.target.value;
     });
   };
+  const imageModes = [{
+    label: "Normal",
+    value: "none"
+  }, {
+    label: "Grayscale and normal on hover",
+    value: "normal_on_hover"
+  }, {
+    label: "Grayscale on hover",
+    value: "on_hover"
+  }, {
+    label: "Always grayscale",
+    value: "always"
+  }];
+  const [selectedImageMode, setSelectedImageMode] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("option1");
+  const handlesetSelectedImageMode = e => {
+    setSelectedImageMode(e.target.value);
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid grid-cols-1 gap-5"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ToggleSwitch__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    label: "Testimonial Image",
+    description: "Show/Hide testimonial image.",
+    type: "checkbox",
+    role: "switch",
+    id: "flexSwitchCheckDefault"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid grid-cols-4"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col-span-1"
@@ -4276,7 +4418,15 @@ function TfShortcodeImageSettings(props) {
     onChange: handleRadioChange,
     id: "square",
     className: "w-[60%]"
-  }))))));
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid grid-cols-1 gap-5"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_SelectInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Image Mode",
+    description: "Select a image mode.",
+    options: imageModes,
+    value: selectedImageMode,
+    onChange: handlesetSelectedImageMode
+  }))));
 }
 
 /***/ }),
@@ -4799,6 +4949,41 @@ function TfThemeSettings(props) {
 
 /***/ }),
 
+/***/ "./src/components/ToggleSwitch.js":
+/*!****************************************!*\
+  !*** ./src/components/ToggleSwitch.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ ToggleSwitch; }
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function ToggleSwitch(props) {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "input-container grid grid-cols-4 gap-4"
+  }, props.label ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "col-span-1"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    className: "block text-sm font-semibold leading-6 text-gray-900 mb-1"
+  }, props.label), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, props.description)) : "", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "col-span-3"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    name: props.name,
+    type: props.type,
+    role: props.role,
+    onChange: props.onChange,
+    id: props.id,
+    class: "mr-2 mt-[0.3rem] h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-neutral-300 before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] after:h-5 after:w-5 after:rounded-full after:border-none after:bg-neutral-100 after:shadow-[0_0px_3px_0_rgb(0_0_0_/_7%),_0_2px_2px_0_rgb(0_0_0_/_4%)] after:transition-[background-color_0.2s,transform_0.2s] after:content-[''] checked:bg-primary checked:after:absolute checked:after:z-[2] checked:after:-mt-[3px] checked:after:ml-[1.0625rem] checked:after:h-5 checked:after:w-5 checked:after:rounded-full checked:after:border-none checked:after:bg-primary checked:after:shadow-[0_3px_1px_-2px_rgba(0,0,0,0.2),_0_2px_2px_0_rgba(0,0,0,0.14),_0_1px_5px_0_rgba(0,0,0,0.12)] checked:after:transition-[background-color_0.2s,transform_0.2s] checked:after:content-[''] hover:cursor-pointer focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[3px_-1px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-5 focus:after:w-5 focus:after:rounded-full focus:after:content-[''] checked:focus:border-primary checked:focus:bg-primary checked:focus:before:ml-[1.0625rem] checked:focus:before:scale-100 checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:bg-neutral-600 dark:after:bg-neutral-400 dark:checked:bg-primary dark:checked:after:bg-primary dark:focus:before:shadow-[3px_-1px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca]"
+  })));
+}
+
+/***/ }),
+
 /***/ "./src/layouts/Layout.js":
 /*!*******************************!*\
   !*** ./src/layouts/Layout.js ***!
@@ -4867,8 +5052,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TfTabs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/TfTabs */ "./src/components/TfTabs.js");
 /* harmony import */ var _components_ShortcodeGeneralSettings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ShortcodeGeneralSettings */ "./src/components/ShortcodeGeneralSettings.js");
 /* harmony import */ var _components_ImageSettings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ImageSettings */ "./src/components/ImageSettings.js");
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button.js");
-/* harmony import */ var _components_ThemeSettings__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/ThemeSettings */ "./src/components/ThemeSettings.js");
+/* harmony import */ var _components_DisplaySettings__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/DisplaySettings */ "./src/components/DisplaySettings.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button.js");
+/* harmony import */ var _components_ThemeSettings__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/ThemeSettings */ "./src/components/ThemeSettings.js");
+
 
 
 
@@ -4890,12 +5077,12 @@ function GenerateShortCodePage() {
     id: "theme-settings",
     label: "Theme Settings",
     icon: "dashicons-admin-appearance",
-    content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ThemeSettings__WEBPACK_IMPORTED_MODULE_9__["default"], null)
+    content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ThemeSettings__WEBPACK_IMPORTED_MODULE_10__["default"], null)
   }, {
     id: "display-settings",
     label: "Display Settings",
     icon: "dashicons-admin-customizer",
-    content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Content for Tab 3")
+    content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_DisplaySettings__WEBPACK_IMPORTED_MODULE_8__["default"], null)
   }, {
     id: "image-settings",
     icon: "dashicons-admin-media",
@@ -4918,7 +5105,7 @@ function GenerateShortCodePage() {
     tabs: tabs
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "flex justify-items-end gap-4"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Button__WEBPACK_IMPORTED_MODULE_8__["default"], null, "Save Settings"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Button__WEBPACK_IMPORTED_MODULE_9__["default"], null, "Save Settings"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Button__WEBPACK_IMPORTED_MODULE_9__["default"], {
     type: "submit",
     className: "tf_btn_outline"
   }, "Go Back")))));

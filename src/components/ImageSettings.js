@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ImageRadioBoxInput from "./ImageRadioBoxInput";
+import SelectInput from "./SelectInput";
+import ToggleSwitch  from "./ToggleSwitch";
 
 export default function TfShortcodeImageSettings(props){ 
 
@@ -13,9 +15,29 @@ export default function TfShortcodeImageSettings(props){
         return e.target.value;
         });
     };
+
+    const imageModes = [
+        { label: "Normal", value: "none" },
+        { label: "Grayscale and normal on hover", value: "normal_on_hover" },
+        { label: "Grayscale on hover", value: "on_hover" },
+        { label: "Always grayscale", value: "always" },
+    ];
+    const [selectedImageMode, setSelectedImageMode] = useState("option1");
+    const handlesetSelectedImageMode = (e) => {
+        setSelectedImageMode(e.target.value);
+    };
     return (
         <>
             <div className="grid grid-cols-1 gap-5">
+                <div className="grid grid-cols-1 gap-5">
+                    <ToggleSwitch 
+                        label="Testimonial Image"
+                        description="Show/Hide testimonial image." 
+                        type="checkbox"
+                        role="switch"
+                        id="flexSwitchCheckDefault"
+                    />
+                </div>
                 <div className="grid grid-cols-4">
                     <div className="col-span-1">
                         <label className="block text-sm font-semibold leading-6 text-gray-900 mb-1">
@@ -56,6 +78,16 @@ export default function TfShortcodeImageSettings(props){
                             />
                         </div>
                     </div>
+                </div>
+            
+                <div className="grid grid-cols-1 gap-5">
+                    <SelectInput 
+                        label = "Image Mode"
+                        description = "Select a image mode."
+                        options={imageModes}
+                        value={selectedImageMode}
+                        onChange={handlesetSelectedImageMode}
+                    />
                 </div>
             </div>
         </>
