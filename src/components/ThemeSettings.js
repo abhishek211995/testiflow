@@ -12,6 +12,8 @@ export default function TfThemeSettings(props) {
       return e.target.value;
     });
   };
+
+  const ImagePath = tfadminVars.admin_images_path
   return (
     <div>
       <PageIntro
@@ -26,7 +28,7 @@ export default function TfThemeSettings(props) {
             checked={selectedRadioOption === "theme1"}
             className="w-[90%]"
             onChange={handleRadioChange}
-            imgPath="http://localhost:1010/store-apps/wp-content/plugins/testimonial-free/src/Admin/Views/Framework/assets/images/1.svg"
+            imgPath={`${ImagePath}1.svg`}
           />
         </div>
         <div className="">
@@ -36,7 +38,7 @@ export default function TfThemeSettings(props) {
             className="w-[90%]"
             checked={selectedRadioOption === "theme2"}
             onChange={handleRadioChange}
-            imgPath="http://localhost:1010/store-apps/wp-content/plugins/testimonial-free/src/Admin/Views/Framework/assets/images/1.svg"
+            imgPath={`${ImagePath}1.svg`}
           />
         </div>
         <div className="">
@@ -46,7 +48,7 @@ export default function TfThemeSettings(props) {
             className="w-[90%]"
             checked={selectedRadioOption === "theme3"}
             onChange={handleRadioChange}
-            imgPath="http://localhost:1010/store-apps/wp-content/plugins/testimonial-free/src/Admin/Views/Framework/assets/images/1.svg"
+            imgPath={`${ImagePath}1.svg`}
           />
         </div>
         <div className="">
@@ -56,7 +58,7 @@ export default function TfThemeSettings(props) {
             className="w-[90%]"
             checked={selectedRadioOption === "theme4"}
             onChange={handleRadioChange}
-            imgPath="http://localhost:1010/store-apps/wp-content/plugins/testimonial-free/src/Admin/Views/Framework/assets/images/1.svg"
+            imgPath={`${ImagePath}1.svg`}
           />
         </div>
       </div>
