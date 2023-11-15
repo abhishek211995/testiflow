@@ -21,7 +21,7 @@ const TfTabs = ({ tabs }) => {
                 href="javascript:void(0)"
                 className={`inline-block hover:bg-grap-200 w-full p-4 text-gray-90 focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-gray-700 dark:text-white ${
                   activeTab === tab.id
-                    ? "bg-blue-800 text-white hover:text-white active:text-white"
+                    ? "bg-violet-700 text-white hover:text-white active:text-white"
                     : " bg-white hover:text-gray-800 hover:bg-gray-100"
                 }`}
               >

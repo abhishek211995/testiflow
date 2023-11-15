@@ -46,6 +46,8 @@ define( 'TESTIFLOW_VERSION', '1.0.0' );
 // Files Version
 define('TESTIFLOW_FILE_VERSION', '1.0.0');
 
+define('TESTIFLOW_DB_VERSION', '1.0.0');
+
 // Plugin Root File
 define( 'TESTIFLOW_PLUGIN_FILE', __FILE__ );
 

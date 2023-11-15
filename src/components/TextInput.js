@@ -1,6 +1,8 @@
+import { useField } from "formik";
 import React from "react";
 
 export default function TextInput(props) {
+  const [field, meta, helpers] = useField(props);
   return (
     <div className="input-container grid grid-cols-4 gap-4">
       {props.label ? (
@@ -15,13 +17,13 @@ export default function TextInput(props) {
       )}
       <div className="col-span-3">
         <input
-          name={props.name}
-          type={props.type}
-          placeholder={props.placeholder}
-          value={props.value}
-          onChange={props.onChange}
+          {...field}
+          {...props}
           className="tf_input"
         />
+        {meta.touched && meta.error ? (
+          <div className="error">{meta.error}</div>
+        ) : null}
       </div>
     </div>
   );

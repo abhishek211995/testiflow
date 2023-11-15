@@ -3,17 +3,8 @@ import ImageRadioBoxInput from "./ImageRadioBoxInput";
 import PageIntro from "./Layouts/PageIntro";
 
 export default function TfThemeSettings(props) {
-  const [selectedRadioOption, setRadioOption] = useState("theme1");
+  const ImagePath = tfadminVars.admin_images_path;
 
-  const handleRadioChange = (e) => {
-    console.log("in");
-    setRadioOption((prev) => {
-      console.log("prev", prev);
-      return e.target.value;
-    });
-  };
-
-  const ImagePath = tfadminVars.admin_images_path
   return (
     <div>
       <PageIntro
@@ -25,10 +16,9 @@ export default function TfThemeSettings(props) {
           <ImageRadioBoxInput
             label="theme1"
             value="theme1"
-            checked={selectedRadioOption === "theme1"}
             className="w-[90%]"
-            onChange={handleRadioChange}
             imgPath={`${ImagePath}1.svg`}
+            name="tf_theme"
           />
         </div>
         <div className="">
@@ -36,9 +26,8 @@ export default function TfThemeSettings(props) {
             label="theme2"
             value="theme2"
             className="w-[90%]"
-            checked={selectedRadioOption === "theme2"}
-            onChange={handleRadioChange}
             imgPath={`${ImagePath}1.svg`}
+            name="tf_theme"
           />
         </div>
         <div className="">
@@ -46,9 +35,8 @@ export default function TfThemeSettings(props) {
             label="theme3"
             value="theme3"
             className="w-[90%]"
-            checked={selectedRadioOption === "theme3"}
-            onChange={handleRadioChange}
             imgPath={`${ImagePath}1.svg`}
+            name="tf_theme"
           />
         </div>
         <div className="">
@@ -56,9 +44,8 @@ export default function TfThemeSettings(props) {
             label="theme4"
             value="theme4"
             className="w-[90%]"
-            checked={selectedRadioOption === "theme4"}
-            onChange={handleRadioChange}
             imgPath={`${ImagePath}1.svg`}
+            name="tf_theme"
           />
         </div>
       </div>

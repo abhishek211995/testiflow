@@ -12,10 +12,7 @@ export default function TfDisplaySettings(props) {
     { label: "h5", value: "h5" },
     { label: "h6", value: "h6" },
   ];
-  const [selectedHtmlTags, setSelectedHtmlTags] = useState("H1");
-  const handlesetSelectedHtmlTags = (e) => {
-    setSelectedHtmlTags(e.target.value);
-  };
+
   return (
     <>
       <div className="grid grid-cols-1 gap-5">
@@ -24,18 +21,14 @@ export default function TfDisplaySettings(props) {
           <ToggleSwitch
             label="Section Title"
             description="Show/Hide the testimonial section title."
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
+            name="tf_enable_section_title"
           />
         </div>
         <div className="grid grid-cols-1 gap-5">
           <ToggleSwitch
             label="Testimonial Title"
             description="Show/Hide the testimonial section title."
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
+            name="tf_enable_testimonial_title"
           />
         </div>
         <div className="grid grid-cols-1 gap-5">
@@ -43,20 +36,14 @@ export default function TfDisplaySettings(props) {
             label="HTML Tag"
             description="Select testimonial title HTML tag."
             options={htmlTags}
-            value={selectedHtmlTags}
-            onChange={handlesetSelectedHtmlTags}
+            name="tf_testimonial_title_html_tag"
           />
         </div>
         <div className="grid grid-cols-1 gap-5">
           <ToggleSwitch
             label="Read More"
             description="Show/Hide testimonial read more button."
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-            onChange={() => {
-              console.log("value");
-            }}
+            name="tf_enable_read_more"
           />
         </div>
       </div>
@@ -66,9 +53,7 @@ export default function TfDisplaySettings(props) {
           <ToggleSwitch
             label="Full Name"
             description="Show/Hide reviewer full name."
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
+            name="tf_enable_full_name"
           />
         </div>
 
@@ -77,8 +62,7 @@ export default function TfDisplaySettings(props) {
             label="HTML Tag"
             description="Select reviewer name HTML tag."
             options={htmlTags}
-            value={selectedHtmlTags}
-            onChange={handlesetSelectedHtmlTags}
+            name="tf_reviewer_name_html_tag"
           />
         </div>
 
@@ -86,9 +70,7 @@ export default function TfDisplaySettings(props) {
           <ToggleSwitch
             label="Identity or Position"
             description="Show/Hide identity or position."
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
+            name="tf_enable_position"
           />
         </div>
       </div>

@@ -29,23 +29,9 @@ export default function TfShortcodeGeneralSettings() {
   ];
 
   const order_settings = [
-    { label: "Ascending", value: "ASC" },
-    { label: "Descending", value: "DSC" },
+    { label: "Ascending", value: "asc" },
+    { label: "Descending", value: "desc" },
   ];
-
-  const handleSelectChange = (e) => {
-    setSelectedOption(e.target.value);
-  };
-
-  const [selectedRadioOption, setRadioOption] = useState("slider");
-
-  const handleRadioChange = (e) => {
-    console.log("in");
-    setRadioOption((prev) => {
-      console.log("prev", prev);
-      return e.target.value;
-    });
-  };
 
   return (
     <>
@@ -60,8 +46,6 @@ export default function TfShortcodeGeneralSettings() {
         <TextInput
           type="text"
           name="tf_shortcode_name"
-          onchange=""
-          value=""
           placeholder="Shortcode Name"
           label="Shortcode Name"
           description="Enter Your Unique Shortcode Name"
@@ -83,8 +67,6 @@ export default function TfShortcodeGeneralSettings() {
                 label="Slider"
                 value="slider"
                 imgPath={`${image_path}/slider`}
-                checked={selectedRadioOption === "slider"}
-                onChange={handleRadioChange}
                 id="slider"
                 className="w-[90%]"
               />
@@ -93,8 +75,6 @@ export default function TfShortcodeGeneralSettings() {
                 label="Grid"
                 value="grid"
                 imgPath={`${image_path}/grid`}
-                checked={selectedRadioOption === "grid"}
-                onChange={handleRadioChange}
                 id="grid"
                 className="w-[90%]"
               />
@@ -103,8 +83,6 @@ export default function TfShortcodeGeneralSettings() {
                 label="List"
                 value="list"
                 imgPath={`${image_path}/list`}
-                checked={selectedRadioOption === "list"}
-                onChange={handleRadioChange}
                 id="list"
                 className="w-[90%]"
               />
@@ -113,8 +91,6 @@ export default function TfShortcodeGeneralSettings() {
                 label="Masonary"
                 value="masonary"
                 imgPath={`${image_path}/masonry`}
-                checked={selectedRadioOption === "masonary"}
-                onChange={handleRadioChange}
                 id="masonary"
                 className="w-[90%]"
               />
@@ -125,15 +101,12 @@ export default function TfShortcodeGeneralSettings() {
           <SelectInput
             label="Filter Testimonials:"
             options={filter_testimonial_settings}
-            value={selectedOption}
-            onChange={handleSelectChange}
+            name="tf_filter_testimonial"
             description="Select an option to display the testimonials"
           />
           <TextInput
             type="text"
             name="tf_limit"
-            onchange=""
-            value=""
             placeholder="Limit"
             label="Limit"
             description="Limit number of testimonials to show. Leave it empty to show all testimonials"
@@ -141,37 +114,32 @@ export default function TfShortcodeGeneralSettings() {
           <SelectInput
             label="Orderby:"
             options={orderby_settings}
-            value={selectedOption}
-            onChange={handleSelectChange}
             description="Select an order by option"
+            name="tf_order_by"
           />
           <SelectInput
             label="Order:"
             options={order_settings}
-            value={selectedOption}
-            onChange={handleSelectChange}
             description="Select an order option"
+            name="tf_order"
           />
           <SelectInput
             label="Desktop Columns:"
             options={cols_settings}
-            value={selectedOption}
-            onChange={handleSelectChange}
             description="Set number of column(s) in desktop view."
+            name="tf_desktop_cols"
           />
           <SelectInput
             label="Tablet Columns:"
             options={cols_settings}
-            value={selectedOption}
-            onChange={handleSelectChange}
             description="Set number of column(s) in Tablet view."
+            name="tf_tablet_cols"
           />
           <SelectInput
             label="Mobile Columns:"
             options={cols_settings}
-            value={selectedOption}
-            onChange={handleSelectChange}
             description="Set number of column(s) in Mobile view."
+            name="tf_mobile_cols"
           />
         </div>
       </div>

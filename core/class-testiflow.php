@@ -30,32 +30,11 @@ if ( ! class_exists( 'Testiflow' ) ) :
 	 */
 	final class Testiflow {
 
-		/**
-		 * The real instance
-		 *
-		 * @access	private
-		 * @since	1.0.0
-		 * @var		object|Testiflow
-		 */
 		private static $instance;
-
-		/**
-		 * TESTIFLOW helpers object.
-		 *
-		 * @access	public
-		 * @since	1.0.0
-		 * @var		object|Testiflow_Helpers
-		 */
 		public $helpers;
-
-		/**
-		 * TESTIFLOW settings object.
-		 *
-		 * @access	public
-		 * @since	1.0.0
-		 * @var		object|Testiflow_Settings
-		 */
 		public $settings;
+		public $admin;
+		public $db;
 
 		/**
 		 * Throw error on object clone.
@@ -100,6 +79,7 @@ if ( ! class_exists( 'Testiflow' ) ) :
 				self::$instance->helpers		= new Testiflow_Helpers();
 				self::$instance->settings		= new Testiflow_Settings();
 				self::$instance->admin = new Testiflow_Admin();
+				self::$instance->db = new Testiflow_Database();
 
 				//Fire the plugin logic
 				new Testiflow_Run();
@@ -137,8 +117,8 @@ if ( ! class_exists( 'Testiflow' ) ) :
 		 * @return  void
 		 */
 		private function base_hooks() {
-			add_action( 'plugins_loaded', array( self::$instance, 'load_textdomain' ) );
-			register_activation_hook( TESTIFLOW_PLUGIN_FILE, array( self::$instance, 'plugin_activation' ) );
+			add_action( 'plugins_loaded', array( self::$instance, 'tf_plugins_loaded' ) );
+			register_activation_hook( TESTIFLOW_PLUGIN_FILE, array( self::$instance, 'tf_plugin_activation' ) );
 			
 		}
 
@@ -149,13 +129,15 @@ if ( ! class_exists( 'Testiflow' ) ) :
 		 * @since   1.0.0
 		 * @return  void
 		 */
-		public function load_textdomain() {
+		public function tf_plugins_loaded() {
 			load_plugin_textdomain( 'testiflow', FALSE, dirname( plugin_basename( TESTIFLOW_PLUGIN_FILE ) ) . '/languages/' );
+			$this->db->tf_create_table();
 		}
 
 
-		public function plugin_activation() {
+		public function tf_plugin_activation() {
 			add_option('testiflow_activated', 'yes');
+			add_option('tf_testimonial_db_version', TESTIFLOW_DB_VERSION);
 			add_option('testiflow_permalinks_flushed', 'no');
 		}
 

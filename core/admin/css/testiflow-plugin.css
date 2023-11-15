@@ -41,7 +41,7 @@
 /* CSS */
 .tf_button {
   appearance: button;
-  background-color: #1652F0;
+  /*background-color: #4f46e5;*/
   gap: 5px;
   border: 1px;
   display: flex;
@@ -75,8 +75,8 @@
 }
 
 .tf_button:hover {
-  background-color: #0A46E4;
-  border-color: #0A46E4;
+  /*background-color: #0A46E4;
+  border-color: #0A46E4;*/
 }
 
 .tf_button:active {

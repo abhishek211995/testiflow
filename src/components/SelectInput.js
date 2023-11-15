@@ -1,6 +1,8 @@
+import { useField } from "formik";
 import React from "react";
 
-export default function SelectInput(props) {
+export default function SelectInput({ ...props }) {
+  const [field, meta, helpers] = useField(props);
   return (
     <div className="select-input grid grid-cols-4">
       <div className="col-span-1">
@@ -12,19 +14,23 @@ export default function SelectInput(props) {
       <div className="col-span-3">
         <select
           className="tf_select_input w-full"
-          value={props.value}
-          onChange={props.onChange}
+          {...field}
+          {...props}
         >
           <option value="">Select an Option</option>
           {props.options.map((option) => (
             <option
               key={option.value}
               value={option.value}
+              selected={field.value === props.value}
             >
               {option.label}
             </option>
           ))}
         </select>
+        {meta.touched && meta.error ? (
+          <div className="error">{meta.error}</div>
+        ) : null}
       </div>
     </div>
   );

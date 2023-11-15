@@ -28,13 +28,18 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         add_filter('use_block_editor_for_post_type', array($this, 'tf_disable_gutenberg_editor_for_custom_post_type'), 10, 2);
 	}
 
+    public function preload(){
+        
+    }
+
     public function tf_include_admin_files(){
         require_once TESTIFLOW_PLUGIN_DIR . 'core/admin/classes/Meta.php';
+        require_once TESTIFLOW_PLUGIN_DIR . 'core/admin/classes/DB.php';
     }
 
     public function tf_register_admin_scripts(){
 
-        wp_register_script('testiflow-admin', TESTIFLOW_PLUGIN_URL.'core/admin/js/testiflow-main.js', array('jquery', 'testiflow-raty'), TESTIFLOW_FILE_VERSION);
+        wp_register_script('testiflow-admin', TESTIFLOW_PLUGIN_URL.'core/admin/js/testiflow-main.js', array('jquery'), TESTIFLOW_FILE_VERSION);
         wp_localize_script( 'testiflow-admin', 'tfadminVars',
             array( 
                 'admin_images_path' => TESTIFLOW_PLUGIN_URL.'core/admin/images/',
@@ -42,11 +47,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         );
         wp_enqueue_script('testiflow-admin');
 
-        global $screen_id_options;
-	    //if ( $screen_id_options == $screen_id_options ) {
+        $current_screen = get_current_screen();
+
+	    if ( $current_screen->id == 'tf_testimonials_page_tf_shortcodes' ) {
 		    wp_enqueue_script('react-settings-page-menu-options', TESTIFLOW_PLUGIN_URL . 'build/index.js', array('wp-element', 'wp-api-fetch'), TESTIFLOW_FILE_VERSION, true);
             wp_enqueue_style( 'react-settings-page-menu-options', TESTIFLOW_PLUGIN_URL.'build/index.css', array('wp-components'), TESTIFLOW_FILE_VERSION, 'all' );
-        //}
+        }
 
         wp_enqueue_script( 'testiflow-raty', TESTIFLOW_PLUGIN_URL.'core/admin/js/jquery.raty.js', array('jquery'), TESTIFLOW_FILE_VERSION );
         wp_enqueue_style( 'testiflow-raty', TESTIFLOW_PLUGIN_URL.'core/admin/css/jquery.raty.css', array(), TESTIFLOW_FILE_VERSION );
